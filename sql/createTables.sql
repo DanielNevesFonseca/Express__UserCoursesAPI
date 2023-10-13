@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 CREATE TABLE IF NOT EXISTS "courses" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(15) NOT NULL,
-	"description" TEXT NOT NULL	
+	"description" TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS "userCourses" (
@@ -19,5 +19,4 @@ CREATE TABLE IF NOT EXISTS "userCourses" (
 	"courseId" INTEGER NOT NULL,
 	FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE,
 	FOREIGN KEY ("courseId") REFERENCES "courses"("id") ON DELETE CASCADE
-
 );
